@@ -1,0 +1,4 @@
+# Why rust
+
+* Safety
+* Performance
