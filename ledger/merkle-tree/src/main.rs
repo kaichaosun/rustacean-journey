@@ -1,4 +1,4 @@
-use ring::digest::{digest, Context, Digest, SHA256};
+use ring::digest::{digest, Context, SHA256};
 
 #[derive(Debug)]
 pub struct MerkleTree {
@@ -112,6 +112,17 @@ impl MerkleTree {
             count,
         }
     }
+
+    // TODO: Generate merkle proof
+    // pub fn gen_proof(&self, value: u8) -> Option<Proof> {
+    //     let root_hash = self.root.hash();
+        
+    //     let mut ctx = Context::new(&SHA256);
+    //     ctx.update(&[0x00]);
+    //     ctx.update(&[value]);
+    //     let leaf_hash = ctx.finish();
+    // }
+
 }
 
 fn main() {
@@ -120,5 +131,5 @@ fn main() {
     let leafs = vec![2, 8, 9, 18, 4];
     let merkle_tree = MerkleTree::from_vec(leafs);
 
-    println!("The constructed merkle tree is {:?}", merkle_tree);
+    println!("The constructed merkle tree is:\n{:?}", merkle_tree);
 }
