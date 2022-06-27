@@ -10,7 +10,7 @@ use std::io::{BufReader, Read};
 fn main() -> Result<(), String> {
     println!("Hello, world!");
 
-    let input = File::open("/Users/kaichaosun/github/holo/ad4m-host/dist/ad4m-macos-x64")
+    let input = File::open("/Users/kaichaosun/github/holo/ad4m-host/ad4m-macos-x64")
         .map_err(|e| e.to_string())?;
     let reader = BufReader::new(input);
     let digest = sha256_digest(reader)?;
